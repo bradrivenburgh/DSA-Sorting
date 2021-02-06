@@ -35,11 +35,12 @@ Second partition (pivot = 9): 3, 9, 10, 12, 19, 14, 17, 16, 13, 15
 When using the first item on the list as a pivot
 
 ****
-i=10
+i=6
 j=6
 14, 17, 13, 15, 19, 10, 3, 16, 9, 12
 Answer: 
 First partition (pivot = 14): 15, 13, 10, 3, 9, 12, 14, 16, 19, 17
+Second partition (pivot = 15): 15, 13, 10, 3, 9, 12, 14, 16, 19, 17
 ****
 */
 
