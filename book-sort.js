@@ -5,9 +5,10 @@ Express this as an algorithm and then implement your algorithm.
 
 Answer: Merge sort does the job. I originally thought that I would
 need to explicity create a helper function to convert characters
-to there charCode values in order to do a proper comparison of strings
+to their charCode values in order to do a proper comparison of strings
 in merge(), but apparently this is done natively and is not necessary.
 */
+
 const books = [
   'The Final Empire',
   'The Well of Ascension',
