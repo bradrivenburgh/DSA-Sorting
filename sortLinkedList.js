@@ -15,9 +15,11 @@ function LLSort(list) {
   if (!list) {
     return;
   }
+
   if (list.length <= 1) {
     return list;
   }
+
   const middle = Math.floor(list.length / 2);
   let left = splitList(list, 0, middle);
   let right = splitList(list, middle, list.length); // may need length -1
@@ -28,7 +30,7 @@ function LLSort(list) {
   return mergeLL(left, right);
 }
 
-function splitList (list, start = 0, end = list.length - 1) {
+function splitList (list, start = 0, end = list.length) {
   let currNode = list.head;
   if (currNode === null) {
     return;
@@ -76,16 +78,5 @@ function mergeLL(left, right) {
   return mergedLL;
 }
 
-function getListLength(list) {
-  let currNode = list.head;
-  if (currNode.next === null) {
-    return list;
-  }
-  let length = 1;
-  while (currNode.next !== null) {
-    length++;
-    currNode = currNode.next;
-  }
-}
 
-console.log(LLSort(LL))
+console.log(JSON.stringify(LLSort(LL)))

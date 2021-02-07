@@ -61,7 +61,6 @@ class LinkedList {
   insertLast(item) {
     if (this.head === null) {
       this.insertFirst(item);
-      this.length++;
       return;
     }
 
