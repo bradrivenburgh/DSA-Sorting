@@ -5,44 +5,42 @@ your linked list class from previous lesson to create the list and use all
 of its supplemental functions to solve this problem.
 */
 
-const LinkedList = require('./LinkedList');
+const LinkedList = require("./LinkedList");
 
 const LL = new LinkedList();
 
-[1,3,5,9,2,4,11].forEach(num => LL.insertFirst(num));
+[1, 3, 5, 9, 2, 4, 11].forEach((num) => LL.insertFirst(num));
 
 function LLSort(list) {
   if (!list) {
     return;
   }
-
   if (list.length <= 1) {
     return list;
   }
-
   const middle = Math.floor(list.length / 2);
   let left = splitList(list, 0, middle);
-  let right = splitList(list, middle, list.length); // may need length -1
-  
+  let right = splitList(list, middle, list.length);
+
   left = LLSort(left);
   right = LLSort(right);
 
   return mergeLL(left, right);
 }
 
-function splitList (list, start = 0, end = list.length) {
+function splitList(list, start = 0, end = list.length) {
   let currNode = list.head;
   if (currNode === null) {
     return;
   }
   const returnList = new LinkedList();
-  
+
   let i = 0;
   while (currNode !== null) {
     // Start copying after reaching desired starting point
-    if (i >= start && i < end) { 
+    if (i >= start && i < end) {
       returnList.insertLast(currNode.value);
-    }    
+    }
     i++;
     currNode = currNode.next;
   }
@@ -58,13 +56,12 @@ function mergeLL(left, right) {
     if (currLeft.value <= currRight.value) {
       mergedLL.insertLast(currLeft.value); // append lower values to mergedLL
       currLeft = currLeft.next; // traverse
-    } 
-    else {
+    } else {
       mergedLL.insertLast(currRight.value); // else append higher values to mergedLL
       currRight = currRight.next; //traverse
     }
   }
-  // Once left or right is completely traversed, insert the rest 
+  // Once left or right is completely traversed, insert the rest
   // of the values from remaining list to mergedLL
   while (currLeft) {
     mergedLL.insertLast(currLeft.value);
@@ -78,5 +75,26 @@ function mergeLL(left, right) {
   return mergedLL;
 }
 
-
-console.log(JSON.stringify(LLSort(LL)))
+console.log(JSON.stringify(LLSort(LL)));
+/*
+Expected output:
+{
+  head: {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: {
+            value: 5,
+            next: { value: 9, next: { value: 11, next: null } },
+          },
+        },
+      },
+    },
+  },
+  length: 7,
+};
+*/
