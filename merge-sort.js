@@ -93,6 +93,8 @@ let data = [89, 30, 25, 32, 72, 70, 51, 42, 25, 24, 53, 55, 78, 50, 13, 40,
     97, 82, 6, 88, 3, 7, 46, 13, 11, 64, 76, 31, 26, 38, 28, 13, 17, 69, 90, 1, 
     6, 7, 64, 43, 9, 73, 80, 98, 46, 27, 22, 87, 49, 83, 6, 39, 42, 51, 54, 84, 
     34, 53, 78, 40, 14, 5]
-console.log(mSort(array));
-console.log(mSort(anotherArr));
-console.log(mSort(data))
+// console.log(mSort(array));
+// console.log(mSort(anotherArr));
+// console.log(mSort(data))
+
+module.exports = mSort;

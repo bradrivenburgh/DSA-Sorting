@@ -5,7 +5,6 @@ class _Node {
   }
 }
 
-
 class LinkedList {
   constructor() {
     // 'head' indicates beginning of list / 1st node
